@@ -38,6 +38,5 @@ public class BankLoginTest {
         verificationPage.validVerify(verificationCode.getCode());
     }
 
-
 }
 

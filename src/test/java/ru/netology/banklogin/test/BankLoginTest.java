@@ -31,7 +31,6 @@ public class BankLoginTest {
 
 
     @Test
-    @DisplayName("Should successfully login to dashboard with exist login and password from sut test data")
     void shouldSuccessfulLogin() {
         var verificationPage = loginPage.validLogin(authInfo);
         var verificationCode = SQLHelper.getVerificationCode();
@@ -39,7 +38,6 @@ public class BankLoginTest {
     }
 
     @Test
-    @DisplayName("Should get error notification if user is not exist in data base")
     void shouldGetErrorNotificationIfUserIsNotExistInDataBase() {
         var authInfo = DataHelper.generateRandomUser();
         loginPage.login(authInfo);
@@ -47,7 +45,6 @@ public class BankLoginTest {
     }
 
     @Test
-    @DisplayName("Should get error notification if login with exist in data base and active user and random verification code")
     void shouldGetErrorNotificationIfLoginWithExistInDataBaseAndActiveUserAndRandomVerificationCode() {
         var verificationPage = loginPage.validLogin(authInfo);
         var verificationCode = DataHelper.getRandomVerificationCode();

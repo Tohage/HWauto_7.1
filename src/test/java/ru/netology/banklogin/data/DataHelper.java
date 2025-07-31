@@ -3,6 +3,7 @@ package ru.netology.banklogin.data;
 import com.github.javafaker.Faker;
 import jdk.jfr.DataAmount;
 import lombok.AllArgsConstructor;
+import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.Value;
 
@@ -42,11 +43,14 @@ public class DataHelper {
         String password;
     }
 
-    @DataAmount
+    @Data
     @NoArgsConstructor
     @AllArgsConstructor
     public static class VerificationCode {
         String code;
 
+        public String getCode() {
+            return code;
+        }
     }
 }

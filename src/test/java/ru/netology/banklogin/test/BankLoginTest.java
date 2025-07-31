@@ -41,7 +41,7 @@ public class BankLoginTest {
     void shouldGetErrorNotificationIfUserIsNotExistInDataBase() {
         var authInfo = DataHelper.generateRandomUser();
         loginPage.login(authInfo);
-        loginPage.verifyErrorNotification("Ошибка! \nНеверно указан логин и пароль.");
+        loginPage.verifyErrorNotification("Ошибка! Неверно указан логин или пароль");
     }
 
     @Test
@@ -49,7 +49,7 @@ public class BankLoginTest {
         var verificationPage = loginPage.validLogin(authInfo);
         var verificationCode = DataHelper.getRandomVerificationCode();
         verificationPage.validVerify(verificationCode.getCode());
-        verificationPage.verifyErrorNotification("Ошибка! \nНеверно указан код! Попробуйте еще раз.");
+        verificationPage.verifyErrorNotification("Ошибка! Неверно указан код! Попробуйте еще раз");
     }
 
 }

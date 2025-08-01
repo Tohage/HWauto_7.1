@@ -48,8 +48,8 @@ public class BankLoginTest {
     void shouldGetErrorNotificationIfLoginWithExistInDataBaseAndActiveUserAndRandomVerificationCode() {
         var verificationPage = loginPage.validLogin(authInfo);
         var verificationCode = DataHelper.getRandomVerificationCode();
-        verificationPage.validVerify(verificationCode.getCode());
-        verificationPage.verifyErrorNotification("Ошибка! Неверно указан код! Попробуйте еще раз");
+        verificationPage.verify(verificationCode.getCode());
+        verificationPage.verifyErrorNotification("Ошибка! Неверно указан код! Попробуйте еще раз. ");
     }
 
 }

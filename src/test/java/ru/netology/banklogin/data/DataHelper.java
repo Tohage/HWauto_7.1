@@ -49,8 +49,5 @@ public class DataHelper {
     public static class VerificationCode {
         String code;
 
-        public String getCode() {
-            return code;
-        }
     }
 }
